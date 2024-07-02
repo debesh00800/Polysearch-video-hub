@@ -7,8 +7,10 @@ The objective is to build a video search engine application with a GUI.
 ![image](https://github.com/debesh00800/Polysearch-video-hub/assets/127446600/427eb323-82ec-439d-9ee6-50442c4ad52c)
 The following features are mandatory: 
 
-•	The application must be combinedly managed by all 2 database programs. 
+•	The application must be combinedly managed by all 2 database programs.
+
 o	MongoDB should be used for indexing the video files. Use the video dataset shared with this file (‘dataset.tar’). Please feel free to add more video documents, e.g., you can create JSON files of your favorite videos and add them to the database.  
+
 o	MySQL will be used to store relational information, such as click-through information. 
 
 •	The GUI should at least have the following components: 
