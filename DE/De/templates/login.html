@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="form-structor">
+        <form id="signup-submit-btn">
+            <div class="signup">
+                <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+                <div class="form-holder">
+                    <input id="UserId" type="text" class="input" placeholder="User ID" />
+                    <input id="Email" type="email" class="input" placeholder="Email" />
+                    <input id="Password" type="password" class="input" placeholder="Password" />
+                    <input id="ConfirmPassword" type="password" class="input" placeholder="Confirm Password" />
+                    <input id="SecurityQuestion" type="text" class="input" placeholder="Security Question" />
+                    <input id="SecurityAnswer" type="text" class="input" placeholder="Security Answer" />
+                </div>
+                <button class="submit-btn">Sign up</button>
+            </div>
+        </form>
+        <form id="login-submit-btn">
+            <div class="login slide-up">
+                <div class="center">
+                    <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+                    <div class="form-holder">
+                        <input id="UserId2" type="text" class="input" placeholder="User ID" />
+                        <input id="Password2" type="password" class="input" placeholder="Password" />
+                    </div>
+                    <a href="#" id="forgot-password-link">Forgot Password?</a>
+                    <div id="forgot-password-form" style="display: none;">
+                        <h2 class="form-title">Forgot Password</h2>
+                        <div class="form-holder">
+                            <input id="recovery-user-id" type="text" class="input" placeholder="User ID" />
+                            <input id="recovery-security-answer" type="text" class="input" placeholder="Security Answer" />
+                        </div>
+                        <button id="recover-password-btn" class="submit-btn">Recover Password</button>
+                    </div>
+                    <button class="submit-btn">Log in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>

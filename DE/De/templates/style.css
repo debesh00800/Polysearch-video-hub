@@ -1,0 +1,278 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: #3498db;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-family: cursive;
+}
+
+#searchForm {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#search_query {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 10px;
+}
+
+#searchForm input[type="button"] {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchForm input[type="button"]:hover {
+    background-color: #2980b9;
+}
+
+#current_video_panel {
+    width: 100%;
+    padding-bottom: 40%;
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#current_video_content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* #video-iframe {
+    width: 400%;
+    height: 60vh; 
+} */
+
+#video-title,
+#video-description,
+#channel-title,
+#likes,
+#dislikes,
+#comments,
+#published-at {
+    color: black;
+}
+
+#video-thumbnail,
+#video {
+    width: 50%;
+    height: 50%;
+    margin-left: 0px;
+    margin-top: -50px;
+   
+}
+
+#likes:hover,
+#dislikes:hover,
+#comments:hover {
+    text-decoration: underline;
+}
+
+#likes,
+#dislikes,
+#comments {
+    cursor: pointer;
+    background-color: #3498db;
+    border: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#likes:hover,
+#dislikes:hover,
+#comments:hover {
+    background-color: #2980b9;
+}
+
+#likes-count,
+#dislikes-count,
+#comment-count {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#ranking_list {
+    list-style: none;
+    padding: 0;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ranking-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.ranking-item-details {
+    flex: 1;
+}
+
+.ranking-item-details h4 {
+    font-weight: bold;
+}
+
+.ranking-item-details p {
+    margin-top: 5px;
+    color: #555;
+}
+
+#video_history {
+    margin-top: 20px;
+}
+
+#video_history h2 {
+    color: #3498db;
+}
+
+#history_list {
+    list-style: none;
+    padding: 0;
+}
+
+#history_list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#history_list img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#history_list div {
+    flex: 1;
+}
+
+#history_list p {
+    margin: 0;
+    color: #555;
+}
+
+button {
+    margin: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    color: black;
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#details-container button {
+    background-color: #e74c3c;
+}
+
+#details-container button:hover {
+    background-color: #c0392b;
+}
+footer {
+    color: white;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  /* Add this to your existing styles or create a new style section */
+
+/* Comment Section Styles */
+#comment-section {
+    margin-top: 20px;
+}
+
+#comment-form {
+    margin-top: 10px;
+}
+
+#comment {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#comments-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.comment-buttons button {
+    margin-right: 10px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.like-count,
+.dislike-count {
+    margin-right: 10px;
+    font-size: 14px;
+}

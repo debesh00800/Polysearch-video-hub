@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Search</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        #searchPanel {
+            width: 20%;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+        #videoPanel {
+            width: 75%;
+            padding: 20px;
+            background-color: #fff;
+        }
+        #recommendationPanel {
+            width: 20%;
+            padding: 20px;
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="searchPanel">
+            <h2>Search Videos</h2>
+            <input type="text" id="searchInput" placeholder="Enter video title">
+            <button onclick="searchVideos()">Search</button>
+        </div>
+        <div id="videoPanel">
+            <h2>Video Display</h2>
+            <div id="videoDisplay"></div>
+        </div>
+        <div id="recommendationPanel">
+            <h2>Recommendations</h2>
+            <ul id="recommendationList"></ul>
+        </div>
+    </div>
+
+    <script>
+        // Function to perform video search
+        function searchVideos() {
+            const searchInput = document.getElementById("searchInput").value;
+
+            // Perform AJAX request to your server to search for videos based on the input
+            // Update the videoDisplay and recommendationList accordingly
+            // You may use Fetch API or other methods to perform the AJAX request
+
+            // For demonstration purposes, let's assume a static response
+            const videoDisplay = document.getElementById("videoDisplay");
+            videoDisplay.innerHTML = `<p>Results for: ${searchInput}</p><p>[Video 1]</p><p>[Video 2]</p>`;
+
+            const recommendationList = document.getElementById("recommendationList");
+            recommendationList.innerHTML = `<li>Recommended Video 1</li><li>Recommended Video 2</li>`;
+        }
+    </script>
+</body>
+</html>

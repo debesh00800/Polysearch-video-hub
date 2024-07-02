@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Search App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-AdVt57fjYJ+5gWwmfZm1JK1qCQfaRl/Bi6d4Wz5ab4e67CeGU4XT1gfC3Zb9PXrxOGGn4xV3s9KJHQp50IvNOQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div id="header">
+        <img src="./icon.png" style="margin-left: -370px;" />
+        <h1 style="margin-top: -51px;">Video Search App</h1>
+    </div>
+    <div id="profileInfo">
+        <!-- Placeholder for user's email -->
+        <span id="userEmail"></span>
+    </div>
+    <div id="searchForm">
+        <form action="/" method="post">
+            <label for="search_query"></label>
+            <input type="text" id="search_query" name="search_query" />
+            <input type="button" value="Search" onclick="searchVideos()" />
+        </form>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 20px">
+        <div style="width: 70%">
+            <!-- Current Video Panel -->
+            <h2>Current Video</h2>
+            <div id="current_video_panel">
+            
+                <!-- Video details will be displayed here -->
+                <div id="current_video_content">
+                    <!-- Video details will be displayed here -->
+                    <!-- -->
+                <!-- <div style="display: flex; align-items: center;">
+                         <img style="margin-left: 20px" id="video-thumbnail" src="https://cdn-icons-png.flaticon.com/512/6051/6051399.png" alt="Video Thumbnail"> 
+                        
+                    </div>  -->
+                    <iframe id="video-iframe" width="100%" height="190%" src="https://www.youtube.com/embed/CK2ZINeVKcQ" frameborder="0" allowfullscreen></iframe>
+                    
+
+                    <!-- <br>
+                    <br>
+                    <br>
+                     -->
+          
+                </div>
+                
+            </div>
+            <div style="width: 78% ;  margin-top: 50px; margin-left: 20px; background-color:#ecf0f1 ;">
+                
+                <button onclick="showDetails()">Show Details</button> 
+                <div id="details-container" style="display: none;">
+                    <h3 id="video-title">Video Title</h3>
+                    <p id="video-description">Video Description</p>
+                    <p id="channel-title">Channel Title</p>
+                    <p id="published-at">Published at: yyyy-mm-dd</p>
+                    <p id="video-id">id is  ...</p>
+                    <!-- <p id="likes-count-details">Likes: 0</p>
+                    <p id="dislikes-count-details">Dislikes: 0</p>
+                    <p id="comment-count-details">Comments: 0</p>  -->
+                     <button onclick="hideDetails()">Hide Details</button>
+                </div>
+                
+                
+                <!-- <h3 id="video-title">Video Title</h3>
+                    <p id="video-description">Video Description</p>
+                    <p id="channel-title">Channel Title</p>
+                    <p id="published-at">Published at: yyyy-mm-dd</p>-->
+                 <button id="likes" onclick="increase()">Likes: <span id="likes-count">0</span></button>
+                <button id="dislikes" onclick="decrease()">Dislikes: <span id="dislikes-count">  0</span></button>
+                    <!-- <button id="comments">Comments: <span id="comment-count">0</span></button>   -->
+                
+            </div> 
+            <div style="width: 78% ;  margin-top: 50px; margin-left: 20px; background-color:#ecf0f1 ;">
+                <!-- ... (your existing code) ... -->
+            
+                <div id="comment-section">
+                    <h3>Comments</h3>
+                    <ul id="comments-list">
+                        <!-- Comments will be displayed here -->
+                    </ul>
+            
+                    <!-- Add a form to allow users to add comments -->
+                    <form id="comment-form">
+                        <label for="comment">Add a comment:</label>
+                        <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+                        <br>
+                        <button type="button" onclick="addComment()">Add Comment</button>
+                    </form>
+                </div>
+            </div>  
+            
+        </div>
+        <div style="width: 25%">
+           
+            <h2>Ranking</h2>
+            <ul id="ranking_list">
+                <!-- Video ranking will be displayed here -->
+                <li class="ranking-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3799/3799931.png" alt="Small Image">
+                    <div class="ranking-item-details">
+                        <h4>search results</h4>
+                        <p>Description of the video ranking item.</p>
+                    </div>
+                </li>
+                <!-- Repeat the structure for each ranking item -->
+            </ul>
+        </div>
+    </div>
+    <!-- <div style="width: 50% ;  ">
+        <p id="video-description">Video Description</p>
+        <p id="channel-title">Channel Title</p><br>
+        <button id="likes">Likes: <span id="likes-count">0</span></p>
+        <button id="dislikes">Dislikes: <span id="dislikes-count">  0</span></p>
+        <button id="comments">Comments: <span id="comment-count">0</span></p>
+        <p>Published at: <span id="published-at">yyyy-mm-dd</span></p>
+    </div> -->
+        
+    </div>
+    
+    <!-- Like, Dislike, Comment buttons -->
+   
+        
+      
+   <div>
+    
+    <div style="display: flex; justify-content: space-between;">
+        <div style="width: 48%;">
+            <!-- History Display -->
+            <ul id="history_list">
+                <!-- Video ranking will be displayed here -->
+                <li class="history-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3799/3799931.png" alt="Small Image">
+                    <div class="ranking-item-details">
+                        <h4>History</h4>
+                        <p>Description of the recently played videos.</p>
+                    </div>
+                </li>
+                <!-- Repeat the structure for each history item -->
+            </ul>
+        </div>
+    
+        <div style="width: 48%;">
+            <!-- Recommendation Display -->
+            <ul id="recommend_list">
+                <!-- Video ranking will be displayed here -->
+                <li class="recommend-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3799/3799931.png" style="height: 20px;" alt="Small Image">
+                    <div class="ranking-item-details">
+                        <h4>Recommendation</h4>
+                        <p>Description of the recommended videos.</p>
+                    </div>
+                </li>
+                <!-- Repeat the structure for each recommendation item -->
+            </ul>
+        </div>
+    </div>
+    
+</div>
+    <br>
+    <br>
+    <footer class="f">copyright</footer>
+    <br>
+    <br>
+    
+
+    <script src="login.js"></script>
+<!-- Then include script.js -->
+<script src="script.js"></script>
+         
+    </script>
+</body>
+</html>
